@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	contaDaSilvia := contas.ContaCorrente{titular: "Silvia", saldo: 300}
-	contaDoGustavo := contas.ContaCorrente{titular: "Gustavo", saldo: 100}
+	contaDaSilvia := contas.ContaCorrente{Titular: "Silvia", Saldo: 300}
+	contaDoGustavo := contas.ContaCorrente{Titular: "Gustavo", Saldo: 100}
 
-	status := contaDoGustavo.transferir(-200, &contaDaSilvia)
+	status := contaDoGustavo.Transferir(-200, &contaDaSilvia)
 
 	fmt.Println(status)
 
