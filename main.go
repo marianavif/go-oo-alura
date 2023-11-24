@@ -3,17 +3,22 @@ package main
 import (
 	"fmt"
 
-	contas "github.com/marianavif/go-oo-alura/contas"
+	"github.com/marianavif/go-oo-alura/contas"
 )
 
+func PagarBoleto(conta verificarConta, valorDoBoleto float64) {
+	conta.Sacar(valorDoBoleto)
+}
+
+type verificarConta interface {
+	Sacar(valor float64) string
+}
+
 func main() {
-	contaDaSilvia := contas.ContaCorrente{Titular: "Silvia", Saldo: 300}
-	contaDoGustavo := contas.ContaCorrente{Titular: "Gustavo", Saldo: 100}
+	contaDoDenis := contas.ContaPoupanca{}
+	contaDoDenis.Depositar(100)
+	PagarBoleto(&contaDoDenis, 60)
 
-	status := contaDoGustavo.Transferir(-200, &contaDaSilvia)
+	fmt.Println(contaDoDenis.ObterSaldo())
 
-	fmt.Println(status)
-
-	fmt.Println(contaDaSilvia)
-	fmt.Println(contaDoGustavo)
 }
