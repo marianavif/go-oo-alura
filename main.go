@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	contas "github.com/marianavif/go-oo-alura/contas"
 )
 
 func main() {
